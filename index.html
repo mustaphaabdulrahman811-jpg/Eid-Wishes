@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Eid Mubarak Nafisat 🌙✨</title>
+<style>
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --emerald: #10b981;
+  --emerald-dark: #065f46;
+  --emerald-light: #6ee7b7;
+  --gold: #f59e0b;
+  --gold-light: #fde68a;
+  --gold-dark: #92400e;
+  --midnight: #0f172a;
+  --midnight-2: #1e293b;
+  --midnight-3: #0a0f1e;
+  --white: #f8fafc;
+  --soft-white: #e2e8f0;
+  --glass: rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.15);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --glow-gold: 0 0 20px rgba(245,158,11,0.5), 0 0 40px rgba(245,158,11,0.2);
+  --glow-emerald: 0 0 20px rgba(16,185,129,0.5), 0 0 40px rgba(16,185,129,0.2);
+  --transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ===== LIGHT MODE ===== */
+body.light-mode {
+  --midnight: #f0fdf4;
+  --midnight-2: #dcfce7;
+  --midnight-3: #ecfdf5;
+  --white: #064e3b;
+  --soft-white: #065f46;
+  --glass: rgba(0,0,0,0.05);
+  --glass-border: rgba(0,0,0,0.1);
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--midnight-3);
+  color: var(--white);
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--midnight-3); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ===== CANVAS BACKGROUND ===== */
+#bgCanvas {
+  position: fixed; top:0; left:0;
+  width:100%; height:100%;
+  pointer-events: none; z-index:0;
+}
+
+/* ===================== LOGIN PAGE ===================== */
+#loginPage {
+  position: fixed; inset:0;
+  display: flex; align-items:center; justify-content:center;
+  z-index: 9999;
+  background: radial-gradient(ellipse at center, #0a1628 0%, #050d1a 100%);
+  overflow: hidden;
+}
+#loginPage canvas {
+  position:absolute; inset:0; pointer-events:none;
+}
+.login-box {
+  position:relative; z-index:10;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 24px;
+  padding: 50px 45px;
+  max-width: 480px; width:90%;
+  text-align:center;
+  box-shadow: 0 0 60px rgba(245,158,11,0.15), 0 0 120px rgba(16,185,129,0.05);
+  animation: loginBoxAppear 1s ease forwards;
+}
+@keyframes loginBoxAppear {
+  from { opacity:0; transform:translateY(40px) scale(0.95); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+.login-crescent {
+  font-size: 4rem; margin-bottom:8px;
+  animation: floatCrescent 3s ease-in-out infinite;
+  display:block;
+}
+@keyframes floatCrescent {
+  0%,100% { transform:translateY(0) rotate(-5deg); }
+  50% { transform:translateY(-12px) rotate(5deg); }
+}
+.login-title {
+  font-family:'Cinzel Decorative', serif;
+  font-size: 1.8rem; color: var(--gold);
+  text-shadow: var(--glow-gold);
+  margin-bottom:6px;
+}
+.login-subtitle {
+  font-size:0.85rem; color: var(--emerald-light);
+  margin-bottom:30px; opacity:0.8;
+}
+.login-input-wrap { position:relative; margin-bottom:20px; }
+.login-input-wrap input {
+  width:100%;
+  padding: 16px 22px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(245,158,11,0.3);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-size:1rem; font-family:'Poppins',sans-serif;
+  outline:none;
+  transition: var(--transition);
+}
+.login-input-wrap input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(245,158,11,0.3);
+}
+.login-input-wrap input::placeholder { color:rgba(255,255,255,0.4); }
+.login-input-wrap input.shake {
+  animation: shake 0.5s ease;
+}
+@keyframes shake {
+  0%,100%{transform:translateX(0)}
+  15%{transform:translateX(-10px)}
+  30%{transform:translateX(10px)}
+  45%{transform:translateX(-8px)}
+  60%{transform:translateX(8px)}
+  75%{transform:translateX(-5px)}
+  90%{transform:translateX(5px)}
+}
+.login-btn {
+  width:100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--gold), var(--emerald));
+  color: #fff; font-size:1.1rem;
+  font-family:'Poppins',sans-serif; font-weight:600;
+  cursor:pointer; letter-spacing:1px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(245,158,11,0.3);
+}
+.login-btn:hover {
+  transform:translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245,158,11,0.5);
+}
+.login-message {
+  margin-top:18px; font-size:1rem;
+  min-height:28px; font-weight:600;
+  border-radius:10px; padding:8px 14px;
+  transition: var(--transition);
+}
+.login-message.error {
+  color:#ff6b6b;
+  text-shadow: 0 0 10px rgba(255,100,100,0.6);
+  animation: pulseBad 0.5s ease;
+}
+.login-message.success {
+  color: var(--emerald-light);
+  text-shadow: 0 0 10px rgba(110,231,183,0.8);
+  animation: pulseGood 0.6s ease;
+}
+@keyframes pulseBad {
+  0%,100%{transform:scale(1)} 50%{transform:scale(1.06)}
+}
+@keyframes pulseGood {
+  0%,100%{transform:scale(1)} 50%{transform:scale(1.08)}
+}
+.login-footer {
+  margin-top:24px; font-size:0.78rem;
+  color:rgba(255,255,255,0.3);
+}
+
+/* ===== CONFETTI ===== */
+.confetti-piece {
+  position:fixed; top:-10px;
+  width:10px; height:10px;
+  opacity:1; z-index:99999;
+  pointer-events:none;
+  animation: confettiFall linear forwards;
+}
+@keyframes confettiFall {
+  to { transform: translateY(110vh) rotate(720deg); opacity:0; }
+}
+
+/* ===================== MAIN WEBSITE ===================== */
+#mainSite {
+  display:none; position:relative; z-index:1;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position:fixed; top:0; width:100%; z-index:1000;
+  padding: 16px 5%;
+  display:flex; align-items:center; justify-content:space-between;
+  background: rgba(10,15,30,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(245,158,11,0.15);
+  transition: var(--transition);
+}
+.nav-logo {
+  font-family:'Cinzel Decorative', serif;
+  font-size:1.1rem; color: var(--gold);
+  text-shadow: var(--glow-gold);
+  letter-spacing:1px;
+}
+.nav-links {
+  display:flex; gap:8px; list-style:none;
+  flex-wrap:wrap; justify-content:center;
+}
+.nav-links a {
+  color: var(--soft-white);
+  text-decoration:none; font-size:0.82rem;
+  padding:7px 14px; border-radius:20px;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+.nav-links a:hover {
+  color: var(--gold);
+  border-color: rgba(245,158,11,0.3);
+  background: rgba(245,158,11,0.07);
+}
+.nav-actions { display:flex; gap:10px; align-items:center; }
+.btn-toggle {
+  background: rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  color:var(--white); border-radius:50%;
+  width:38px; height:38px; font-size:1rem;
+  cursor:pointer; transition: var(--transition);
+  display:flex; align-items:center; justify-content:center;
+}
+.btn-toggle:hover { background:rgba(245,158,11,0.15); border-color:var(--gold); }
+
+/* ===== HERO SECTION ===== */
+#hero {
+  min-height:100vh; display:flex;
+  flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding: 100px 5% 60px;
+  position:relative; overflow:hidden;
+}
+.hero-bg-gradient {
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(16,185,129,0.08) 0%, transparent 70%),
+              radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.06) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background: rgba(245,158,11,0.1);
+  border:1px solid rgba(245,158,11,0.3);
+  border-radius:50px; padding:8px 20px;
+  font-size:0.82rem; color:var(--gold-light);
+  margin-bottom:24px;
+  animation: fadeInDown 1s ease;
+}
+.hero-title {
+  font-family:'Cinzel Decorative', serif;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  background: linear-gradient(135deg, var(--gold), var(--emerald-light), var(--gold));
+  background-size:200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 4s linear infinite, fadeInUp 1.2s ease;
+  line-height:1.15; margin-bottom:12px;
+}
+@keyframes shimmerText {
+  0%{background-position:0%} 100%{background-position:200%}
+}
+.hero-arabic {
+  font-family:'Amiri', serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: var(--gold-light);
+  text-shadow: var(--glow-gold);
+  margin-bottom:16px;
+  direction:rtl;
+  animation: fadeInUp 1.4s ease;
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--emerald-light);
+  margin-bottom:10px;
+  animation: fadeInUp 1.5s ease;
+}
+.hero-personal {
+  font-size:0.92rem; color:rgba(255,255,255,0.5);
+  margin-bottom:40px;
+  animation: fadeInUp 1.6s ease;
+}
+.hero-personal span { color:var(--gold); font-weight:600; }
+.hero-cta-group {
+  display:flex; gap:16px; flex-wrap:wrap; justify-content:center;
+  animation: fadeInUp 1.8s ease;
+  margin-bottom:50px;
+}
+.btn-primary {
+  padding:14px 32px; border-radius:50px;
+  background: linear-gradient(135deg, var(--gold), #d97706);
+  color:#fff; font-weight:600; font-size:0.95rem;
+  border:none; cursor:pointer;
+  box-shadow: var(--glow-gold);
+  transition: var(--transition); text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.btn-primary:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 0 40px rgba(245,158,11,0.6); }
+.btn-secondary {
+  padding:14px 32px; border-radius:50px;
+  background: rgba(16,185,129,0.1);
+  color:var(--emerald-light); font-weight:600; font-size:0.95rem;
+  border:1px solid rgba(16,185,129,0.4); cursor:pointer;
+  transition: var(--transition); text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.btn-secondary:hover { transform:translateY(-3px); background:rgba(16,185,129,0.2); }
+
+/* ===== COUNTDOWN ===== */
+.countdown-wrap {
+  display:flex; gap:20px; justify-content:center;
+  animation: fadeInUp 2s ease;
+}
+.countdown-item {
+  text-align:center;
+  background: var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:16px; padding:16px 20px;
+  backdrop-filter:blur(10px);
+  min-width:80px;
+}
+.countdown-num {
+  display:block; font-size:2rem;
+  font-family:'Cinzel Decorative',serif;
+  color:var(--gold);
+  text-shadow: var(--glow-gold);
+  font-weight:700;
+}
+.countdown-lbl { font-size:0.72rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; }
+
+/* ===== SECTION SHARED ===== */
+section { padding:90px 5%; position:relative; }
+.section-header {
+  text-align:center; margin-bottom:60px;
+}
+.section-tag {
+  display:inline-block;
+  background:rgba(245,158,11,0.1);
+  border:1px solid rgba(245,158,11,0.3);
+  border-radius:50px; padding:6px 18px;
+  font-size:0.78rem; color:var(--gold); letter-spacing:2px;
+  text-transform:uppercase; margin-bottom:16px;
+}
+.section-title {
+  font-family:'Cinzel Decorative', serif;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  background: linear-gradient(135deg, var(--gold), var(--emerald-light));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:14px;
+}
+.section-desc {
+  font-size:1rem; color:rgba(255,255,255,0.55);
+  max-width:600px; margin:0 auto;
+  line-height:1.7;
+}
+.divider {
+  width:80px; height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:16px auto;
+}
+
+/* ===== WORLD TABS ===== */
+.world-tabs {
+  display:flex; gap:12px; flex-wrap:wrap;
+  justify-content:center; margin-bottom:40px;
+}
+.world-tab {
+  padding:10px 22px; border-radius:50px;
+  background: var(--glass); border:1px solid var(--glass-border);
+  color:rgba(255,255,255,0.6); font-size:0.88rem;
+  cursor:pointer; transition: var(--transition);
+  backdrop-filter:blur(8px);
+}
+.world-tab.active, .world-tab:hover {
+  background:rgba(245,158,11,0.15);
+  border-color:var(--gold); color:var(--gold);
+}
+.world-content { display:none; }
+.world-content.active { display:grid; }
+
+.country-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:24px;
+}
+.country-card {
+  background: var(--glass);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);
+  border-radius:20px; padding:28px 24px;
+  transition: var(--transition);
+  cursor:default;
+  position:relative; overflow:hidden;
+}
+.country-card::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--gold), var(--emerald));
+  opacity:0; transition: var(--transition);
+}
+.country-card:hover {
+  transform:translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), var(--glow-gold);
+  border-color:rgba(245,158,11,0.3);
+}
+.country-card:hover::before { opacity:1; }
+.country-flag { font-size:3rem; margin-bottom:14px; display:block; }
+.country-name {
+  font-family:'Playfair Display', serif;
+  font-size:1.3rem; color:var(--gold);
+  margin-bottom:10px;
+}
+.country-desc {
+  font-size:0.85rem; color:rgba(255,255,255,0.6);
+  line-height:1.7; margin-bottom:14px;
+}
+.country-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.ctag {
+  background:rgba(16,185,129,0.12);
+  border:1px solid rgba(16,185,129,0.25);
+  border-radius:20px; padding:4px 12px;
+  font-size:0.72rem; color:var(--emerald-light);
+}
+
+/* ===== FOOD SECTION ===== */
+.food-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:28px;
+}
+.food-card {
+  perspective:1000px; height:280px; cursor:pointer;
+}
+.food-card-inner {
+  position:relative; width:100%; height:100%;
+  transform-style:preserve-3d;
+  transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  border-radius:20px;
+}
+.food-card:hover .food-card-inner { transform:rotateY(180deg); }
+.food-front, .food-back {
+  position:absolute; inset:0;
+  border-radius:20px;
+  backface-visibility:hidden;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  padding:24px;
+}
+.food-front {
+  background:linear-gradient(135deg, rgba(245,158,11,0.1), rgba(16,185,129,0.08));
+  border:1px solid rgba(245,158,11,0.2);
+  backdrop-filter:blur(14px);
+}
+.food-back {
+  background:linear-gradient(135deg, rgba(16,185,129,0.15), rgba(245,158,11,0.1));
+  border:1px solid rgba(16,185,129,0.3);
+  transform:rotateY(180deg);
+  backdrop-filter:blur(14px);
+  text-align:center;
+}
+.food-emoji { font-size:4rem; margin-bottom:12px; }
+.food-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem; color:var(--gold);
+}
+.food-origin { font-size:0.78rem; color:var(--emerald-light); margin-top:4px; }
+.food-desc { font-size:0.83rem; color:rgba(255,255,255,0.7); line-height:1.6; }
+
+/* ===== FASHION SECTION ===== */
+.fashion-slider { position:relative; overflow:hidden; }
+.fashion-track {
+  display:flex; gap:24px;
+  animation:fashionSlide 25s linear infinite;
+}
+.fashion-track:hover { animation-play-state:paused; }
+@keyframes fashionSlide {
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.fashion-card {
+  min-width:220px;
+  background: var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:20px; padding:30px 20px;
+  text-align:center; flex-shrink:0;
+  transition: var(--transition);
+  backdrop-filter:blur(12px);
+}
+.fashion-card:hover {
+  transform:scale(1.06);
+  box-shadow: var(--glow-emerald);
+  border-color:rgba(16,185,129,0.4);
+}
+.fashion-emoji { font-size:3.5rem; display:block; margin-bottom:14px; }
+.fashion-name {
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem; color:var(--gold); margin-bottom:6px;
+}
+.fashion-region { font-size:0.78rem; color:var(--emerald-light); }
+
+/* ===== QUOTES SECTION ===== */
+#quotes { background:linear-gradient(180deg, transparent, rgba(245,158,11,0.03), transparent); }
+.quotes-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:28px;
+}
+.quote-card {
+  background: var(--glass);
+  border:1px solid rgba(245,158,11,0.2);
+  border-radius:20px; padding:32px 28px;
+  backdrop-filter:blur(14px);
+  transition: var(--transition);
+  position:relative; overflow:hidden;
+}
+.quote-card::after {
+  content:''; position:absolute;
+  inset:0; border-radius:20px;
+  box-shadow:inset 0 0 60px rgba(245,158,11,0.04);
+  pointer-events:none;
+}
+.quote-card:hover {
+  transform:translateY(-6px);
+  box-shadow: var(--glow-gold);
+  border-color:rgba(245,158,11,0.5);
+}
+.quote-arabic {
+  font-family:'Amiri',serif;
+  font-size:1.5rem; color:var(--gold-light);
+  text-align:center; direction:rtl;
+  margin-bottom:14px; line-height:1.8;
+  text-shadow: var(--glow-gold);
+}
+.quote-trans {
+  font-style:italic; color:rgba(255,255,255,0.75);
+  font-size:0.9rem; text-align:center;
+  margin-bottom:12px; line-height:1.6;
+}
+.quote-source {
+  text-align:center; font-size:0.75rem;
+  color:var(--emerald-light); letter-spacing:1px;
+}
+
+/* ===== ROBOT ASSISTANT ===== */
+#robot {
+  position:fixed; bottom:100px; right:28px;
+  z-index:800; display:flex; flex-direction:column;
+  align-items:flex-end; gap:14px;
+}
+.robot-bubble {
+  background: rgba(10,20,40,0.95);
+  border:1px solid rgba(245,158,11,0.3);
+  border-radius:18px; padding:16px 18px;
+  max-width:320px; min-width:220px;
+  box-shadow: var(--glow-gold);
+  display:none;
+  backdrop-filter:blur(20px);
+}
+.robot-bubble.show { display:block; animation:bubbleIn 0.4s ease; }
+@keyframes bubbleIn {
+  from{opacity:0;transform:translateY(12px) scale(0.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.robot-bubble-text {
+  font-size:0.85rem; color:rgba(255,255,255,0.85);
+  line-height:1.6;
+  min-height:20px;
+}
+.robot-bubble-text .cursor {
+  display:inline-block; width:2px; height:14px;
+  background:var(--gold); margin-left:2px;
+  animation:blink 0.7s infinite;
+  vertical-align:middle;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.robot-status {
+  font-size:0.72rem; color:var(--emerald-light);
+  margin-bottom:8px; opacity:0.8;
+}
+.robot-btn {
+  width:68px; height:68px; border-radius:50%;
+  background:linear-gradient(135deg,var(--midnight-2),var(--midnight));
+  border:2px solid var(--gold);
+  cursor:pointer; position:relative;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem;
+  box-shadow: var(--glow-gold);
+  animation:robotPulse 2.5s ease-in-out infinite;
+  transition: var(--transition);
+}
+.robot-btn:hover { transform:scale(1.1); }
+@keyframes robotPulse {
+  0%,100%{box-shadow:0 0 15px rgba(245,158,11,0.4),0 0 30px rgba(245,158,11,0.2)}
+  50%{box-shadow:0 0 30px rgba(245,158,11,0.7),0 0 60px rgba(245,158,11,0.3)}
+}
+.robot-mic {
+  position:absolute; bottom:-4px; right:-4px;
+  width:26px; height:26px; border-radius:50%;
+  background:var(--emerald); border:2px solid var(--midnight-3);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.75rem; cursor:pointer;
+  transition: var(--transition);
+}
+.robot-mic.listening {
+  background:#ef4444;
+  animation:micPulse 0.8s ease-in-out infinite;
+}
+@keyframes micPulse {
+  0%,100%{transform:scale(1)}50%{transform:scale(1.2)}
+}
+.robot-questions {
+  display:flex; flex-direction:column; gap:7px; margin-top:12px;
+}
+.rq-btn {
+  background:rgba(245,158,11,0.08);
+  border:1px solid rgba(245,158,11,0.2);
+  border-radius:10px; padding:7px 12px;
+  color:var(--gold-light); font-size:0.78rem;
+  cursor:pointer; text-align:left;
+  transition: var(--transition);
+}
+.rq-btn:hover { background:rgba(245,158,11,0.15); }
+
+/* ===== MUSIC PLAYER ===== */
+.music-bar {
+  position:fixed; bottom:28px; left:50%;
+  transform:translateX(-50%);
+  background:rgba(10,15,30,0.9);
+  border:1px solid rgba(245,158,11,0.25);
+  border-radius:50px; padding:10px 22px;
+  display:flex; align-items:center; gap:14px;
+  z-index:800; backdrop-filter:blur(20px);
+  box-shadow: var(--glow-gold);
+}
+.music-info { font-size:0.78rem; color:rgba(255,255,255,0.5); }
+.music-info span { color:var(--gold); }
+.music-btn {
+  width:38px; height:38px; border-radius:50%;
+  background:rgba(245,158,11,0.15);
+  border:1px solid rgba(245,158,11,0.3);
+  color:var(--gold); font-size:1rem;
+  cursor:pointer; transition: var(--transition);
+  display:flex; align-items:center; justify-content:center;
+}
+.music-btn:hover { background:rgba(245,158,11,0.25); }
+.music-wave { display:flex; gap:3px; align-items:center; }
+.wave-bar {
+  width:3px; background:var(--gold); border-radius:2px;
+  animation:wave 0.8s ease-in-out infinite;
+}
+.wave-bar:nth-child(1){height:8px;animation-delay:0s}
+.wave-bar:nth-child(2){height:16px;animation-delay:0.1s}
+.wave-bar:nth-child(3){height:12px;animation-delay:0.2s}
+.wave-bar:nth-child(4){height:20px;animation-delay:0.3s}
+.wave-bar:nth-child(5){height:10px;animation-delay:0.4s}
+@keyframes wave {
+  0%,100%{transform:scaleY(1)}50%{transform:scaleY(0.3)}
+}
+.music-wave.paused .wave-bar { animation-play-state:paused; }
+
+/* ===== DM BUTTON ===== */
+.dm-section {
+  text-align:center; padding:60px 5%;
+  background:linear-gradient(180deg,transparent,rgba(16,185,129,0.04),transparent);
+}
+.dm-btn {
+  display:inline-flex; align-items:center; gap:12px;
+  justify-content:center;
+  width:min(100%, 340px);
+  min-height:58px;
+  padding:16px 28px; border-radius:50px;
+  background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));
+  color:#fff; font-size:1.1rem; font-weight:600;
+  line-height:1.25;
+  text-decoration:none; border:none; cursor:pointer;
+  box-shadow: var(--glow-emerald);
+  animation:dmPulse 2s ease-in-out infinite;
+  transition: var(--transition);
+  letter-spacing:0.5px;
+  text-align:center;
+  white-space:normal;
+}
+.dm-btn:hover { transform:translateY(-4px) scale(1.04); }
+@keyframes dmPulse {
+  0%,100%{box-shadow:0 0 20px rgba(16,185,129,0.4),0 0 40px rgba(16,185,129,0.15)}
+  50%{box-shadow:0 0 35px rgba(16,185,129,0.6),0 0 70px rgba(16,185,129,0.25)}
+}
+
+/* ===== PERSONAL SECTION ===== */
+#personal {
+  text-align:center; padding:80px 5%;
+  background:radial-gradient(ellipse at center, rgba(245,158,11,0.05) 0%, transparent 70%);
+}
+.personal-heart {
+  font-size:3.5rem; display:block;
+  animation:heartBeat 1.5s ease-in-out infinite;
+  margin-bottom:20px;
+}
+@keyframes heartBeat {
+  0%,100%{transform:scale(1)}
+  14%{transform:scale(1.3)}
+  28%{transform:scale(1)}
+  42%{transform:scale(1.2)}
+  70%{transform:scale(1)}
+}
+.personal-title {
+  font-family:'Cinzel Decorative',serif;
+  font-size: clamp(1.2rem,3vw,2rem);
+  color:var(--gold); text-shadow: var(--glow-gold);
+  margin-bottom:16px;
+}
+.personal-sub {
+  color:rgba(255,255,255,0.5); font-size:0.9rem; line-height:1.7;
+  max-width:500px; margin:0 auto;
+}
+.personal-sub strong { color:var(--emerald-light); }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align:center; padding:40px 5%;
+  border-top:1px solid rgba(255,255,255,0.07);
+  color:rgba(255,255,255,0.3); font-size:0.82rem;
+}
+footer span { color:var(--gold); }
+
+/* ===== LANTERNS ===== */
+.lantern {
+  position:fixed; pointer-events:none;
+  z-index:0; opacity:0.6;
+  animation:lanternFloat linear infinite;
+}
+@keyframes lanternFloat {
+  0%{transform:translateY(100vh) rotate(-5deg)}
+  100%{transform:translateY(-120px) rotate(5deg)}
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity:0; transform:translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity:1; transform:translateY(0);
+}
+
+@keyframes fadeInDown {
+  from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeInUp {
+  from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-logo{font-size:0.9rem}
+  .countdown-wrap{gap:10px}
+  .countdown-item{padding:12px 14px;min-width:60px}
+  .countdown-num{font-size:1.5rem}
+  #robot{bottom:90px;right:16px}
+  .robot-btn{width:56px;height:56px;font-size:1.4rem}
+  .robot-bubble{max-width:260px}
+  .dm-section{padding:48px 5%}
+  .dm-btn{font-size:1rem;padding:14px 22px}
+  section{padding:60px 5%}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== CANVAS BG ===== -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ===================== LOGIN PAGE ===================== -->
+<div id="loginPage">
+  <canvas id="loginCanvas"></canvas>
+  <div class="login-box">
+    <span class="login-crescent">🌙</span>
+    <h1 class="login-title">Eid Mubarak ✨</h1>
+    <p class="login-subtitle">A Special Surprise Awaits — Verify Your Identity</p>
+    <div class="login-input-wrap">
+      <input type="text" id="loginInput" placeholder="Enter Your Full Name" autocomplete="off" />
+    </div>
+    <button class="login-btn" onclick="attemptLogin()">✨ Enter the Experience</button>
+    <div class="login-message" id="loginMsg"></div>
+    <p class="login-footer">Designed with 💛 by Mustapha Abdulrahman</p>
+  </div>
+</div>
+
+<!-- ===================== MAIN WEBSITE ===================== -->
+<div id="mainSite">
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">🌙 Eid Mubarak Nafisat</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#world">World</a></li>
+      <li><a href="#food">Food</a></li>
+      <li><a href="#fashion">Fashion</a></li>
+      <li><a href="#quotes">Quotes</a></li>
+      <li><a href="#personal">Personal</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-toggle" id="themeBtn" title="Toggle Theme">🌓</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-badge">✨ Specially Designed For You ✨</div>
+    <h1 class="hero-title">Eid Mubarak<br/>Nafisat 🌸</h1>
+    <p class="hero-arabic">عيد مبارك وكل عام وأنتِ بخير</p>
+    <p class="hero-subtitle">May Allah bless you with joy, peace & endless happiness</p>
+    <p class="hero-personal">Crafted with love by <span>Mustapha Abdulrahman</span> — especially for <span>Nafisat Ibrahim ❤️</span></p>
+    <div class="hero-cta-group">
+      <a href="#world" class="btn-primary">🌍 Explore Eid Around The World</a>
+      <a href="#quotes" class="btn-secondary">📖 Islamic Wisdom</a>
+    </div>
+    <div class="countdown-wrap" id="countdown">
+      <div class="countdown-item"><span class="countdown-num" id="cd-d">00</span><span class="countdown-lbl">Days</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-h">00</span><span class="countdown-lbl">Hours</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-m">00</span><span class="countdown-lbl">Mins</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-s">00</span><span class="countdown-lbl">Secs</span></div>
+    </div>
+  </section>
+
+  <!-- WORLD SECTION -->
+  <section id="world">
+    <div class="section-header reveal">
+      <span class="section-tag">🌍 Global Celebration</span>
+      <h2 class="section-title">Eid Around The World</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Discover how over 1.8 billion Muslims across every continent celebrate Eid with joy, unity, and gratitude.</p>
+    </div>
+    <div class="world-tabs reveal">
+      <button class="world-tab active" data-tab="africa">🌍 Africa</button>
+      <button class="world-tab" data-tab="asia">🌏 Asia</button>
+      <button class="world-tab" data-tab="europe">🏰 Europe</button>
+      <button class="world-tab" data-tab="australia">🦘 Australia</button>
+      <button class="world-tab" data-tab="antarctica">❄️ Antarctica</button>
+    </div>
+
+    <!-- AFRICA -->
+    <div class="world-content active country-grid" id="tab-africa">
+      <div class="country-card reveal">
+        <span class="country-flag">🇳🇬</span>
+        <h3 class="country-name">Nigeria</h3>
+        <p class="country-desc">Eid in Nigeria is a massive communal celebration! Muslims don vibrant Agbada, Kaftan & Hijabs. Mosques overflow with Eid prayers, followed by joyful family feasts with Jollof Rice, Suya, and Puff-Puff. Durbar festivals in the North feature magnificent horse parades.</p>
+        <div class="country-tags">
+          <span class="ctag">🎊 Durbar Festival</span>
+          <span class="ctag">🍚 Jollof Rice</span>
+          <span class="ctag">🐎 Horse Parades</span>
+          <span class="ctag">👘 Agbada</span>
+        </div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇲🇦</span>
+        <h3 class="country-name">Morocco</h3>
+        <p class="country-desc">Moroccan Eid is rich with tradition. Families sacrifice a lamb (Eid al-Adha), while women wear the elegant Djellaba. Streets are adorned with colorful lanterns, and homes fill with the aroma of Bastilla, Harira soup, and sweet Sellou pastries.</p>
+        <div class="country-tags">
+          <span class="ctag">🕌 Grand Mosques</span>
+          <span class="ctag">🥙 Harira</span>
+          <span class="ctag">👘 Djellaba</span>
+          <span class="ctag">🏮 Lanterns</span>
+        </div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇪🇬</span>
+        <h3 class="country-name">Egypt</h3>
+        <p class="country-desc">Egypt celebrates Eid with Al-Azhar prayers and family visits. The iconic Ka'ak biscuits are gifted house to house. Children receive Eidiyya money and wear new clothes. Streets come alive with music, swings, and fairground rides along the Nile.</p>
+        <div class="country-tags">
+          <span class="ctag">🕌 Al-Azhar</span>
+          <span class="ctag">🍪 Ka'ak</span>
+          <span class="ctag">💰 Eidiyya</span>
+          <span class="ctag">🎡 Fairgrounds</span>
+        </div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇸🇳</span>
+        <h3 class="country-name">Senegal</h3>
+        <p class="country-desc">Senegalese Muslims celebrate Eid with profound spirituality. Women wear striking Grand Boubou garments with elaborate embroidery. Communities gather for Thiéboudienne fish rice and share gifts. Sufi brotherhoods add a unique musical and spiritual dimension.</p>
+        <div class="country-tags">
+          <span class="ctag">👗 Grand Boubou</span>
+          <span class="ctag">🎵 Sufi Music</span>
+          <span class="ctag">🍽️ Thiéboudienne</span>
+          <span class="ctag">🤝 Unity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASIA -->
+    <div class="world-content country-grid" id="tab-asia">
+      <div class="country-card reveal">
+        <span class="country-flag">🇸🇦</span>
+        <h3 class="country-name">Saudi Arabia</h3>
+        <p class="country-desc">The birthplace of Islam celebrates Eid grandly. Prayers at Masjid al-Haram in Makkah draw millions. Families exchange gifts of gold jewellery and dates. Traditional Kabsa rice with roasted meat graces every table amidst fireworks and street celebrations.</p>
+        <div class="country-tags"><span class="ctag">🕋 Haram</span><span class="ctag">🍖 Kabsa</span><span class="ctag">🎆 Fireworks</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇵🇰</span>
+        <h3 class="country-name">Pakistan</h3>
+        <p class="country-desc">Eid in Pakistan bursts with color and bazaars. Women adorn themselves with mehndi (henna) and dress in vibrant Shalwar Kameez. Sheer Khurma (sweet vermicelli) is the iconic Eid dish. Families visit graveyards to pray for the departed.</p>
+        <div class="country-tags"><span class="ctag">🌿 Mehndi</span><span class="ctag">🍮 Sheer Khurma</span><span class="ctag">🛍️ Bazaars</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇮🇩</span>
+        <h3 class="country-name">Indonesia</h3>
+        <p class="country-desc">The world's largest Muslim nation celebrates Lebaran (Eid) with Mudik — millions travel home for family reunions. Ketupat (rice cakes) and Rendang are shared. Mosques host massive open-air prayers, and communities exchange forgiveness with heartfelt "Maaf Lahir Batin".</p>
+        <div class="country-tags"><span class="ctag">🚂 Mudik</span><span class="ctag">🍛 Rendang</span><span class="ctag">🤲 Forgiveness</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇹🇷</span>
+        <h3 class="country-name">Turkey</h3>
+        <p class="country-desc">Turkey's Şeker Bayramı (Sugar Festival) sees children receive sweets and Baklava from every home they visit. Families kiss elders' hands in deep respect. Streets are illuminated, mosques broadcast beautiful Minarets' calls, and Turkish coffee flows freely.</p>
+        <div class="country-tags"><span class="ctag">🍬 Sweets</span><span class="ctag">🧁 Baklava</span><span class="ctag">☕ Coffee</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇲🇾</span>
+        <h3 class="country-name">Malaysia</h3>
+        <p class="country-desc">Hari Raya in Malaysia transforms cities with dazzling "open house" traditions where all races are welcomed. Satay, Lemang (bamboo rice), and Kuih pastries fill tables. Traditional Baju Melayu outfits shine brilliantly as families visit neighbors.</p>
+        <div class="country-tags"><span class="ctag">🏡 Open House</span><span class="ctag">🥩 Satay</span><span class="ctag">👘 Baju Melayu</span></div>
+      </div>
+    </div>
+
+    <!-- EUROPE -->
+    <div class="world-content country-grid" id="tab-europe">
+      <div class="country-card reveal">
+        <span class="country-flag">🇬🇧</span>
+        <h3 class="country-name">United Kingdom</h3>
+        <p class="country-desc">British Muslims celebrate Eid in a beautifully multicultural setting. East London's Whitechapel and Birmingham's Sparkhill come alive with street bazaars, food stalls, and fairground rides. The Regent's Park Mosque hosts thousands for Eid prayers amid a diverse community.</p>
+        <div class="country-tags"><span class="ctag">🎪 Street Fairs</span><span class="ctag">🕌 Regent's Park</span><span class="ctag">🌍 Multicultural</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇫🇷</span>
+        <h3 class="country-name">France</h3>
+        <p class="country-desc">France's 5+ million Muslims celebrate Eid Al Ftr with great community spirit. The Grande Mosquée de Paris overflows with worshippers. North African communities bring vibrant Algerian, Moroccan, and Tunisian traditions, filling streets with incredible aromas of couscous and pastries.</p>
+        <div class="country-tags"><span class="ctag">🕌 Grande Mosquée</span><span class="ctag">🥘 Couscous</span><span class="ctag">🤲 Community</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🇩🇪</span>
+        <h3 class="country-name">Germany</h3>
+        <p class="country-desc">Germany's Turkish-origin Muslim community hosts spectacular Eid gatherings. The DITIB mosque in Cologne draws thousands. Baklava, Börek, and Turkish sweets are shared with neighbors. Muslim children dress in beautiful new clothes and visit relatives across the city.</p>
+        <div class="country-tags"><span class="ctag">🕌 DITIB Mosque</span><span class="ctag">🍰 Börek</span><span class="ctag">👨‍👩‍👧 Family</span></div>
+      </div>
+    </div>
+
+    <!-- AUSTRALIA -->
+    <div class="world-content country-grid" id="tab-australia">
+      <div class="country-card reveal">
+        <span class="country-flag">🇦🇺</span>
+        <h3 class="country-name">Australia</h3>
+        <p class="country-desc">Australia's diverse Muslim community celebrates Eid with multicultural vibrancy. Lakemba in Sydney transforms into a festival city with food stalls from Lebanon, Pakistan, Egypt, and Turkey. The Lakemba Mosque hosts one of Australia's largest Eid prayers. Families of all backgrounds unite.</p>
+        <div class="country-tags"><span class="ctag">🏙️ Lakemba</span><span class="ctag">🌏 Multicultural</span><span class="ctag">🕌 Sydney Mosque</span></div>
+      </div>
+      <div class="country-card reveal">
+        <span class="country-flag">🦘</span>
+        <h3 class="country-name">Melbourne</h3>
+        <p class="country-desc">Melbourne's Islamic community hosts grand Eid prayer events in Flemington Racecourse. The city's multicultural spirit shines as Arabs, Somalis, Afghans, and Southeast Asians celebrate together. Community BBQs under the open skies make Australian Eid uniquely warm and welcoming.</p>
+        <div class="country-tags"><span class="ctag">🎊 Flemington</span><span class="ctag">🍖 Community BBQ</span><span class="ctag">⭐ Unity</span></div>
+      </div>
+    </div>
+
+    <!-- ANTARCTICA -->
+    <div class="world-content country-grid" id="tab-antarctica">
+      <div class="country-card reveal" style="grid-column:1/-1;max-width:700px;margin:0 auto">
+        <span class="country-flag">❄️</span>
+        <h3 class="country-name">Antarctica — Eid At The Edge Of The World</h3>
+        <p class="country-desc">Even in the most remote and frozen corners of Earth, the spirit of Eid lives on. Muslim researchers and scientists stationed at polar research bases observe Eid with quiet spirituality and deep reflection. When the moon is sighted thousands of miles away, they pause their work, roll out their prayer rugs on frozen ground, and face the Qibla together. Perhaps only 3 or 4 souls in a room — yet the connection to over 1.8 billion Muslims worldwide makes the ice feel warm. They share whatever halal food they've packed, recite Takbeer into the Antarctic winds, and remind themselves that Islam unites every corner of this Earth — even the coldest, remotest, most beautiful one. Subhanallah.</p>
+        <div class="country-tags">
+          <span class="ctag">🧊 Polar Prayer</span>
+          <span class="ctag">🌙 Moon Sighting</span>
+          <span class="ctag">❤️ Spiritual Unity</span>
+          <span class="ctag">🤲 Eid Under Aurora</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD SECTION -->
+  <section id="food">
+    <div class="section-header reveal">
+      <span class="section-tag">🍽️ Eid Cuisine</span>
+      <h2 class="section-title">Eid Food Showcase</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Hover over each dish to discover its story and cultural heritage. Food is love made edible!</p>
+    </div>
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🍚</span><div class="food-name">Jollof Rice</div><div class="food-origin">West Africa</div></div>
+          <div class="food-back"><div class="food-desc">The crown jewel of West African cuisine! Slow-cooked tomato-based rice with fragrant spices. Nigerian Eid feasts are incomplete without this beloved dish. The smoky "party jollof" is legendary!</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🥩</span><div class="food-name">Suya</div><div class="food-origin">Nigeria</div></div>
+          <div class="food-back"><div class="food-desc">Smoky, spiced skewered meat grilled over open flame. Suya is marinated in a blend of groundnut, ginger, paprika, and spices — a sizzling Eid street favourite across Northern Nigeria.</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🍛</span><div class="food-name">Biryani</div><div class="food-origin">South Asia</div></div>
+          <div class="food-back"><div class="food-desc">The king of rice dishes! Aromatic basmati layered with spiced meat, saffron, and caramelized onions. Pakistan & India's Eid tables are never complete without this fragrant masterpiece.</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🍲</span><div class="food-name">Kabsa</div><div class="food-origin">Saudi Arabia</div></div>
+          <div class="food-back"><div class="food-desc">Saudi Arabia's national dish and Eid centrepiece. Long-grain rice cooked in a rich meat broth with cloves, cardamom, rose water, and saffron. Served on a massive communal platter with dates on the side.</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🌴</span><div class="food-name">Dates</div><div class="food-origin">Arabian Peninsula</div></div>
+          <div class="food-back"><div class="food-desc">The Sunnah food of the Prophet ﷺ. Every Muslim home breaks fast and opens Eid celebrations with dates. Sweet, chewy, nourishing — dates symbolize the sweetness of faith and blessings of Allah.</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🥮</span><div class="food-name">Baklava</div><div class="food-origin">Turkey / Middle East</div></div>
+          <div class="food-back"><div class="food-desc">Layers of crispy filo pastry filled with pistachios or walnuts, drenched in golden honey syrup. A Turkish Eid classic that's gifted in beautiful ornate boxes between families and neighbors.</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🍮</span><div class="food-name">Kunafa</div><div class="food-origin">Levant</div></div>
+          <div class="food-back"><div class="food-desc">A heavenly shredded pastry dessert soaked in orange blossom syrup, filled with stretchy cheese or cream. Palestinian and Lebanese families serve this warm, drizzled with pistachios on Eid mornings.</div></div>
+        </div>
+      </div>
+      <div class="food-card">
+        <div class="food-card-inner">
+          <div class="food-front"><span class="food-emoji">🥟</span><div class="food-name">Samosa</div><div class="food-origin">South Asia / East Africa</div></div>
+          <div class="food-back"><div class="food-desc">Golden crispy triangles filled with spiced potato, lentils, or minced meat. From Pakistan to Kenya, samosas are the ultimate Eid snack — impossible to eat just one! Served with tangy chutney.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FASHION SECTION -->
+  <section id="fashion">
+    <div class="section-header reveal">
+      <span class="section-tag">👕 Eid Fashion</span>
+      <h2 class="section-title">Traditional Eid Clothing</h2>
+      <div class="divider"></div>
+      <p class="section-desc">From the regal Agbada to the flowing Thobe — explore the magnificent diversity of Islamic fashion on Eid day.</p>
+    </div>
+    <div class="fashion-slider reveal">
+      <div class="fashion-track" id="fashionTrack">
+        <!-- Items duplicated for infinite scroll -->
+        <div class="fashion-card"><span class="fashion-emoji">👘</span><div class="fashion-name">Agbada</div><div class="fashion-region">Nigeria / West Africa</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🥻</span><div class="fashion-name">Kaftan</div><div class="fashion-region">Pan-Islamic</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">👗</span><div class="fashion-name">Thobe</div><div class="fashion-region">Saudi Arabia</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🧕</span><div class="fashion-name">Jalabiya</div><div class="fashion-region">Egypt / Sudan</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🧣</span><div class="fashion-name">Hijab Styles</div><div class="fashion-region">Worldwide</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🎩</span><div class="fashion-name">Sherwani</div><div class="fashion-region">Pakistan / India</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">👘</span><div class="fashion-name">Baju Melayu</div><div class="fashion-region">Malaysia</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🥼</span><div class="fashion-name">Djellaba</div><div class="fashion-region">Morocco</div></div>
+        <!-- Duplicates for loop -->
+        <div class="fashion-card"><span class="fashion-emoji">👘</span><div class="fashion-name">Agbada</div><div class="fashion-region">Nigeria / West Africa</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🥻</span><div class="fashion-name">Kaftan</div><div class="fashion-region">Pan-Islamic</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">👗</span><div class="fashion-name">Thobe</div><div class="fashion-region">Saudi Arabia</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🧕</span><div class="fashion-name">Jalabiya</div><div class="fashion-region">Egypt / Sudan</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🧣</span><div class="fashion-name">Hijab Styles</div><div class="fashion-region">Worldwide</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🎩</span><div class="fashion-name">Sherwani</div><div class="fashion-region">Pakistan / India</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">👘</span><div class="fashion-name">Baju Melayu</div><div class="fashion-region">Malaysia</div></div>
+        <div class="fashion-card"><span class="fashion-emoji">🥼</span><div class="fashion-name">Djellaba</div><div class="fashion-region">Morocco</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTES SECTION -->
+  <section id="quotes">
+    <div class="section-header reveal">
+      <span class="section-tag">📖 Divine Wisdom</span>
+      <h2 class="section-title">Islamic Quotes & Knowledge</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Timeless words from the Quran and Sunnah — illuminating the beauty of faith, gratitude, and celebration.</p>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card reveal">
+        <p class="quote-arabic">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
+        <p class="quote-trans">"Indeed, with hardship comes ease."</p>
+        <p class="quote-source">Quran 94:5 — Surah Ash-Sharh</p>
+      </div>
+      <div class="quote-card reveal">
+        <p class="quote-arabic">وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ</p>
+        <p class="quote-trans">"And your Lord is going to give you, and you will be satisfied."</p>
+        <p class="quote-source">Quran 93:5 — Surah Ad-Duha</p>
+      </div>
+      <div class="quote-card reveal">
+        <p class="quote-arabic">إِنَّ اللَّهَ جَمِيلٌ يُحِبُّ الْجَمَالَ</p>
+        <p class="quote-trans">"Indeed Allah is Beautiful and loves beauty."</p>
+        <p class="quote-source">Sahih Muslim — Hadith of the Prophet ﷺ</p>
+      </div>
+      <div class="quote-card reveal">
+        <p class="quote-arabic">الْمُؤْمِنُ مِرْآةُ الْمُؤْمِنِ</p>
+        <p class="quote-trans">"The believer is the mirror of his brother."</p>
+        <p class="quote-source">Sunan Abu Dawood — Hadith</p>
+      </div>
+      <div class="quote-card reveal">
+        <p class="quote-arabic">لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ</p>
+        <p class="quote-trans">"If you are grateful, I will surely increase you in favor."</p>
+        <p class="quote-source">Quran 14:7 — Surah Ibrahim</p>
+      </div>
+      <div class="quote-card reveal">
+        <p class="quote-arabic">خَيْرُكُمْ أَحْسَنُكُمْ خُلُقًا</p>
+        <p class="quote-trans">"The best of you are those with the best character."</p>
+        <p class="quote-source">Sahih Bukhari — Prophet Muhammad ﷺ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL SECTION -->
+  <section id="personal">
+    <span class="personal-heart">❤️</span>
+    <h2 class="personal-title reveal">Specially Designed For Nafisat Ibrahim ❤️</h2>
+    <div class="divider"></div>
+    <p class="personal-sub reveal">
+      This entire experience was crafted with <strong>pure love and dedication</strong> by <strong>Mustapha Abdulrahman</strong> — to celebrate you, honor you, and remind you how truly special you are. May this Eid bring you <strong>immense joy, blessings, and all that your heart desires</strong>. You deserve the world. 🌸
+    </p>
+  </section>
+
+  <!-- DM SECTION -->
+  <div class="dm-section reveal">
+    <a href="https://wa.me/2349032915572?text=Hello%20Mustapha%20👋" class="dm-btn" target="_blank" rel="noopener">💬 Message Mustapha</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>🌙 Eid Mubarak Nafisat ✨ | Designed with <span>💛</span> by <span>Mustapha Abdulrahman</span></p>
+    <p style="margin-top:8px">May Allah accept from us and from you. Taqabbalallahu minnaa wa minkum 🤲</p>
+  </footer>
+
+</div><!-- end mainSite -->
+
+<!-- ROBOT ASSISTANT -->
+<div id="robot" style="display:none">
+  <div class="robot-bubble" id="robotBubble">
+    <div class="robot-status" id="robotStatus">🤖 Ask me anything about Nafisat...</div>
+    <div class="robot-bubble-text" id="robotText">Click the mic or choose a question below ✨</div>
+    <div class="robot-questions">
+      <button class="rq-btn" onclick="askRobot('Who is Nafisat?')">👤 Who is Nafisat?</button>
+      <button class="rq-btn" onclick="askRobot('Tell me about her character')">💎 Tell me about her character</button>
+      <button class="rq-btn" onclick="askRobot('What makes her special?')">⭐ What makes her special?</button>
+      <button class="rq-btn" onclick="askRobot('What habits does she exhibit?')">🌿 What habits does she exhibit?</button>
+    </div>
+  </div>
+  <button class="robot-btn" id="robotBtn" onclick="toggleRobot()">
+    🤖
+    <span class="robot-mic" id="micBtn" onclick="startListening(event)">🎤</span>
+  </button>
+</div>
+
+<!-- MUSIC PLAYER -->
+<div class="music-bar" id="musicBar" style="display:none">
+  <div class="music-wave" id="musicWave">
+    <div class="wave-bar"></div>
+    <div class="wave-bar"></div>
+    <div class="wave-bar"></div>
+    <div class="wave-bar"></div>
+    <div class="wave-bar"></div>
+  </div>
+  <div class="music-info">🎵 <span>Eid Ambient</span></div>
+  <button class="music-btn" id="musicToggle" onclick="toggleMusic()">⏸️</button>
+</div>
+
+<script>
+/* =============================================
+   EID MUBARAK NAFISAT - MAIN SCRIPT
+   Developed by Mustapha Abdulrahman
+============================================= */
+
+// ===== AUDIO ENGINE =====
+const AudioCtx = window.AudioContext || window.webkitAudioContext;
+let audioCtx, musicPlaying = false, musicNodes = {};
+
+function initAudio() {
+  if (audioCtx) return;
+  audioCtx = new AudioCtx();
+}
+
+// Ambient music via Web Audio API (generative)
+function startAmbientMusic() {
+  initAudio();
+  if (musicPlaying) return;
+  musicPlaying = true;
+
+  const masterGain = audioCtx.createGain();
+  masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
+  masterGain.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 3);
+  masterGain.connect(audioCtx.destination);
+
+  const reverb = audioCtx.createConvolver();
+  const rate = audioCtx.sampleRate;
+  const len = rate * 3;
+  const imp = audioCtx.createBuffer(2, len, rate);
+  for (let i = 0; i < 2; i++) {
+    const d = imp.getChannelData(i);
+    for (let j = 0; j < len; j++) d[j] = (Math.random() * 2 - 1) * Math.pow(1 - j / len, 2.5);
+  }
+  reverb.buffer = imp;
+  reverb.connect(masterGain);
+
+  // Gentle melodic pads — Islamic-inspired intervals
+  const notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+  const playNote = (freq, time, dur) => {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, time);
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(0.12, time + 0.4);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + dur);
+    osc.connect(gain);
+    gain.connect(reverb);
+    osc.start(time);
+    osc.stop(time + dur + 0.1);
+  };
+
+  let t = audioCtx.currentTime + 1;
+  const schedule = () => {
+    if (!musicPlaying) return;
+    const note = notes[Math.floor(Math.random() * notes.length)];
+    const dur = 2 + Math.random() * 3;
+    playNote(note, t, dur);
+    playNote(note * 1.5, t + 0.8, dur * 0.7);
+    t += 1.5 + Math.random() * 2;
+    if (t < audioCtx.currentTime + 12) schedule();
+    else musicNodes.timer = setTimeout(schedule, 4000);
+  };
+  schedule();
+  musicNodes.master = masterGain;
+}
+
+function stopAmbientMusic() {
+  if (!musicPlaying) return;
+  musicPlaying = false;
+  clearTimeout(musicNodes.timer);
+  if (musicNodes.master) {
+    musicNodes.master.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+  }
+}
+
+function toggleMusic() {
+  if (musicPlaying) {
+    stopAmbientMusic();
+    document.getElementById('musicToggle').textContent = '▶️';
+    document.getElementById('musicWave').classList.add('paused');
+  } else {
+    startAmbientMusic();
+    document.getElementById('musicToggle').textContent = '⏸️';
+    document.getElementById('musicWave').classList.remove('paused');
+  }
+}
+
+// Click sound
+function playClick() {
+  initAudio();
+  const osc = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  osc.frequency.value = 880;
+  g.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+  osc.connect(g); g.connect(audioCtx.destination);
+  osc.start(); osc.stop(audioCtx.currentTime + 0.1);
+}
+
+// Warning sound
+function playWarning() {
+  initAudio();
+  const osc = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  osc.type = 'sawtooth';
+  osc.frequency.value = 200;
+  g.gain.setValueAtTime(0.1, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+  osc.connect(g); g.connect(audioCtx.destination);
+  osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+}
+
+// Success sound
+function playSuccess() {
+  initAudio();
+  [523, 659, 784, 1047].forEach((f, i) => {
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.frequency.value = f;
+    const t = audioCtx.currentTime + i * 0.12;
+    g.gain.setValueAtTime(0.12, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+    osc.connect(g); g.connect(audioCtx.destination);
+    osc.start(t); osc.stop(t + 0.35);
+  });
+}
+
+// ===== LOGIN CANVAS =====
+(function() {
+  const canvas = document.getElementById('loginCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, stars = [], particles = [];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < 200; i++) {
+    stars.push({
+      x: Math.random() * 3000, y: Math.random() * 2000,
+      r: Math.random() * 1.5 + 0.3,
+      a: Math.random(), speed: Math.random() * 0.005 + 0.002
+    });
+  }
+
+  function drawCrescent(x, y, r, color, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#050d1a';
+    ctx.beginPath();
+    ctx.arc(x + r * 0.35, y, r * 0.85, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawLantern(x, y, scale, alpha) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.translate(x, y);
+    ctx.scale(scale, scale);
+    const grad = ctx.createRadialGradient(0, 0, 2, 0, 0, 22);
+    grad.addColorStop(0, 'rgba(255,200,50,0.9)');
+    grad.addColorStop(1, 'rgba(220,100,20,0.3)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 12, 20, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,180,30,0.6)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  const lanterns = Array.from({length:8}, () => ({
+    x: Math.random() * 1200, y: Math.random() * 800 + 400,
+    speed: 0.2 + Math.random() * 0.3,
+    scale: 0.5 + Math.random() * 1,
+    alpha: 0.3 + Math.random() * 0.4,
+    sway: Math.random() * Math.PI * 2
+  }));
+
+  let t = 0;
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    t += 0.012;
+    const sx = (w - 1920) / 2, sy = (h - 1080) / 2;
+
+    // Stars
+    stars.forEach(s => {
+      s.a += s.speed;
+      ctx.save();
+      ctx.globalAlpha = (Math.sin(s.a) * 0.5 + 0.5) * 0.8;
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(sx + s.x * (w / 3000), sy + s.y * (h / 2000), s.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    });
+
+    // Moon
+    drawCrescent(w * 0.82, h * 0.15, 55, '#f59e0b', 0.7);
+    // Glow around moon
+    const moonGlow = ctx.createRadialGradient(w * 0.82, h * 0.15, 30, w * 0.82, h * 0.15, 130);
+    moonGlow.addColorStop(0, 'rgba(245,158,11,0.15)');
+    moonGlow.addColorStop(1, 'rgba(245,158,11,0)');
+    ctx.fillStyle = moonGlow;
+    ctx.beginPath();
+    ctx.arc(w * 0.82, h * 0.15, 130, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Lanterns
+    lanterns.forEach(l => {
+      l.y -= l.speed;
+      l.sway += 0.015;
+      if (l.y < -60) { l.y = h + 60; l.x = Math.random() * w; }
+      drawLantern(l.x + Math.sin(l.sway) * 10, l.y, l.scale, l.alpha);
+    });
+
+    // Islamic pattern glow (subtle)
+    const px = w / 2, py = h * 0.62;
+    const r = 220 + Math.sin(t) * 15;
+    const patGlow = ctx.createRadialGradient(px, py, 0, px, py, r);
+    patGlow.addColorStop(0, 'rgba(16,185,129,0.04)');
+    patGlow.addColorStop(1, 'rgba(16,185,129,0)');
+    ctx.fillStyle = patGlow;
+    ctx.beginPath();
+    ctx.arc(px, py, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+// ===== LOGIN LOGIC =====
+function attemptLogin() {
+  initAudio();
+  const input = document.getElementById('loginInput');
+  const msg = document.getElementById('loginMsg');
+  const val = input.value.trim();
+
+  if (val === 'Nafisat Ibrahim') {
+    playSuccess();
+    msg.className = 'login-message success';
+    msg.textContent = 'Welcome Nafisat 🌸✨';
+    input.disabled = true;
+    document.querySelector('.login-btn').disabled = true;
+
+    spawnConfetti();
+
+    setTimeout(() => {
+      document.getElementById('loginPage').style.transition = 'opacity 1s';
+      document.getElementById('loginPage').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('mainSite').style.display = 'block';
+        document.getElementById('robot').style.display = 'flex';
+        document.getElementById('musicBar').style.display = 'flex';
+        initMainSite();
+      }, 1000);
+    }, 2500);
+
+  } else {
+    playWarning();
+    msg.className = 'login-message error';
+    msg.textContent = 'Invalid Name ❌';
+    input.classList.remove('shake');
+    void input.offsetWidth;
+    input.classList.add('shake');
+    setTimeout(() => { msg.textContent = ''; }, 3000);
+  }
+}
+
+document.getElementById('loginInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') attemptLogin();
+});
+
+// ===== CONFETTI =====
+function spawnConfetti() {
+  const colors = ['#f59e0b','#10b981','#6ee7b7','#fde68a','#fff','#34d399','#fbbf24'];
+  for (let i = 0; i < 120; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const shape = Math.random() > 0.5 ? '50%' : '0%';
+    el.style.cssText = `
+      left:${Math.random()*100}vw;
+      background:${color};
+      border-radius:${shape};
+      width:${6+Math.random()*10}px;
+      height:${6+Math.random()*10}px;
+      animation-duration:${2+Math.random()*3}s;
+      animation-delay:${Math.random()*1.5}s;
+    `;
+    document.body.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+  }
+}
+
+// ===== FIREWORKS =====
+function launchFireworks() {
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let particles = [];
+  const colors = ['#f59e0b','#10b981','#fff','#6ee7b7','#fde68a','#34d399','#fbbf24','#a78bfa'];
+
+  function burst(x, y) {
+    const count = 60 + Math.floor(Math.random() * 40);
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count;
+      const speed = 2 + Math.random() * 5;
+      particles.push({
+        x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+        alpha: 1, color: colors[Math.floor(Math.random() * colors.length)],
+        size: 2 + Math.random() * 3, decay: 0.015 + Math.random() * 0.02
+      });
+    }
+  }
+
+  let lastBurst = 0;
+  function animateFireworks(ts) {
+    if (ts - lastBurst > 600) {
+      burst(100 + Math.random() * (canvas.width - 200), 80 + Math.random() * (canvas.height * 0.5));
+      lastBurst = ts;
+    }
+    ctx.fillStyle = 'rgba(10,15,30,0.15)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      p.vy += 0.06; p.alpha -= p.decay;
+      ctx.save();
+      ctx.globalAlpha = Math.max(p.alpha, 0);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    });
+    particles = particles.filter(p => p.alpha > 0);
+    if (fireworksActive) requestAnimationFrame(animateFireworks);
+    else { ctx.clearRect(0, 0, canvas.width, canvas.height); initParticles(); }
+  }
+
+  fireworksActive = true;
+  requestAnimationFrame(animateFireworks);
+  setTimeout(() => { fireworksActive = false; }, 6000);
+}
+
+let fireworksActive = false;
+
+// ===== PARTICLE BACKGROUND =====
+function initParticles() {
+  const canvas = document.getElementById('bgCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const pts = Array.from({length: 80}, () => ({
+    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+    vx: (Math.random()-0.5)*0.4, vy: (Math.random()-0.5)*0.4,
+    r: Math.random()*1.5+0.5,
+    type: Math.floor(Math.random()*3)
+  }));
+
+  let mouseX = -1000, mouseY = -1000;
+  window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pts.forEach(p => {
+      // Parallax
+      const dx = mouseX - canvas.width / 2, dy = mouseY - canvas.height / 2;
+      const px = p.x + dx * 0.008, py = p.y + dy * 0.008;
+
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+
+      ctx.save();
+      if (p.type === 0) {
+        ctx.fillStyle = 'rgba(245,158,11,0.5)';
+        ctx.beginPath();
+        ctx.arc(px, py, p.r, 0, Math.PI*2);
+        ctx.fill();
+      } else if (p.type === 1) {
+        ctx.fillStyle = 'rgba(16,185,129,0.35)';
+        ctx.beginPath();
+        ctx.arc(px, py, p.r, 0, Math.PI*2);
+        ctx.fill();
+      } else {
+        ctx.fillStyle = 'rgba(255,255,255,0.25)';
+        ctx.beginPath();
+        ctx.arc(px, py, p.r * 0.6, 0, Math.PI*2);
+        ctx.fill();
+      }
+      ctx.restore();
+    });
+
+    // Connect nearby particles
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i+1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(245,158,11,${(1-dist/120)*0.08})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    if (!fireworksActive) requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+// ===== FLOATING LANTERNS =====
+function spawnLanterns() {
+  const colors = ['#f59e0b','#ef4444','#10b981','#f97316','#a78bfa'];
+  setInterval(() => {
+    const el = document.createElement('div');
+    el.className = 'lantern';
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    el.style.cssText = `
+      left:${Math.random()*100}vw;
+      font-size:${1.2+Math.random()*1.5}rem;
+      animation-duration:${8+Math.random()*8}s;
+      animation-delay:0s;
+      opacity:${0.3+Math.random()*0.3};
+    `;
+    el.textContent = ['🏮','🌟','✨','⭐','💛'][Math.floor(Math.random()*5)];
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 16000);
+  }, 1800);
+}
+
+// ===== WORLD TABS =====
+function initTabs() {
+  document.querySelectorAll('.world-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      playClick();
+      document.querySelectorAll('.world-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.world-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      const el = document.getElementById('tab-' + tab);
+      if (el) el.classList.add('active');
+    });
+  });
+}
+
+// ===== COUNTDOWN =====
+function initCountdown() {
+  // Next Eid estimate (Eid al-Adha 2025 ~June 6)
+  const target = new Date('2025-06-06T00:00:00');
+  function update() {
+    const now = new Date(), diff = target - now;
+    if (diff < 0) {
+      document.getElementById('cd-d').textContent = '00';
+      document.getElementById('cd-h').textContent = '00';
+      document.getElementById('cd-m').textContent = '00';
+      document.getElementById('cd-s').textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  update();
+  setInterval(update, 1000);
+}
+
+// ===== SCROLL REVEAL =====
+function initScrollReveal() {
+  const els = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => observer.observe(el));
+}
+
+// ===== THEME TOGGLE =====
+document.getElementById('themeBtn').addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  playClick();
+});
+
+// ===== AI ROBOT ASSISTANT =====
+let robotOpen = false;
+const responses = {
+  'who is nafisat': `Nafisat Ibrahim is a remarkable and extraordinary young woman — a shining star 🌟 carefully crafted by Allah with a beautiful soul, warm heart, and incredible personality. She is someone who brings light into every room she enters, and her presence is truly a gift to those around her. ✨`,
+  'tell me about her character': `Nafisat's character is like a rare jewel 💎 — rare, precious, and irreplaceable. She carries herself with grace, speaks with wisdom, and treats others with kindness and deep respect. Her intelligence shines through in everything she does, while her humility keeps her grounded. She is truly someone of exceptional character. 🌸`,
+  'what makes her special': `What makes Nafisat truly special is the unique combination of her inner and outer beauty 💛 Her ambition drives her to achieve great things. Her calm and composed nature makes her a source of peace for those around her. Her positive mindset transforms challenges into opportunities. And her caring heart makes everyone she loves feel truly cherished. She is simply one of a kind! ⭐`,
+  'what habits does she exhibit': `Nafisat exhibits beautiful habits that reflect her extraordinary soul 🌿 She is thoughtful and reflective — always thinking before she speaks. She is consistent in her kindness and never wavers in her values. She practices gratitude, maintains good manners, and inspires those around her with her calm focus and positive energy. MashaAllah! 🤲`,
+  'default': `Subhanallah! 🌙 That's a wonderful question about Nafisat. I can tell you that she is one of the most genuinely kind, intelligent, and beautiful souls I have had the pleasure of learning about. Whether it is her warmth, her ambition, her calmness, or her beautiful character — she truly is exceptional. Eid Mubarak, Nafisat! 💛✨`
+};
+
+function toggleRobot() {
+  robotOpen = !robotOpen;
+  const bubble = document.getElementById('robotBubble');
+  if (robotOpen) {
+    bubble.classList.add('show');
+    playClick();
+  } else {
+    bubble.classList.remove('show');
+  }
+}
+
+function askRobot(question) {
+  playClick();
+  const key = question.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+  let response = responses['default'];
+  for (const k in responses) {
+    if (key.includes(k)) { response = responses[k]; break; }
+  }
+  typeRobotResponse(response);
+  speakResponse(response);
+}
+
+function typeRobotResponse(text) {
+  const el = document.getElementById('robotText');
+  const status = document.getElementById('robotStatus');
+  status.textContent = '🤖 Processing...';
+  el.innerHTML = '<span class="cursor"></span>';
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      el.innerHTML = text.slice(0, ++i) + '<span class="cursor"></span>';
+    } else {
+      el.innerHTML = text;
+      status.textContent = '🤖 Ask me anything...';
+      clearInterval(interval);
+    }
+  }, 22);
+}
+
+function speakResponse(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.rate = 0.9; utter.pitch = 1.1; utter.volume = 0.85;
+  const voices = window.speechSynthesis.getVoices();
+  const female = voices.find(v => v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('zira') || v.name.toLowerCase().includes('samantha'));
+  if (female) utter.voice = female;
+  window.speechSynthesis.speak(utter);
+}
+
+// Voice recognition
+let recognition;
+function startListening(e) {
+  e.stopPropagation();
+  initAudio();
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    typeRobotResponse("Sorry, your browser doesn't support voice recognition. Try Chrome! 😊");
+    return;
+  }
+  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechRec();
+  recognition.lang = 'en-US';
+  recognition.interimResults = false;
+
+  const mic = document.getElementById('micBtn');
+  const status = document.getElementById('robotStatus');
+  mic.classList.add('listening');
+  status.textContent = '🎤 Listening...';
+  document.getElementById('robotBubble').classList.add('show');
+  robotOpen = true;
+
+  recognition.onresult = (e) => {
+    const transcript = e.results[0][0].transcript;
+    askRobot(transcript);
+  };
+  recognition.onerror = () => {
+    mic.classList.remove('listening');
+    status.textContent = '🤖 Ask me anything...';
+  };
+  recognition.onend = () => {
+    mic.classList.remove('listening');
+  };
+  recognition.start();
+}
+
+// ===== INIT MAIN SITE =====
+function initMainSite() {
+  initScrollReveal();
+  initTabs();
+  initCountdown();
+  spawnLanterns();
+  launchFireworks();
+  startAmbientMusic();
+
+  // Stagger country card animations
+  document.querySelectorAll('.country-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  // Nav active link highlight on scroll
+  const sections = document.querySelectorAll('section[id], #personal');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => {
+          l.style.color = '';
+          if (l.getAttribute('href') === '#' + e.target.id) l.style.color = 'var(--gold)';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+
+  // Nav click sounds
+  navLinks.forEach(l => l.addEventListener('click', playClick));
+
+  console.log('%c🌙 Eid Mubarak Nafisat! ✨', 'color:#f59e0b;font-size:20px;font-weight:bold;');
+}
+</script>
+</body>
+</html>
